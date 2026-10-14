@@ -3,94 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Jose Allan — Full-Stack Developer building modern, fast, and responsive web applications.">
+    <link rel="icon" href="data:,">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Jose Allan | Portfolio</title>
+    <title>Jose Allan | Full-Stack Developer</title>
 </head>
 
 <body>
-    <div class="navbar">
-        <nav><a href="#about">About</a></nav>
-        <nav><a href="#projects">Projects</a></nav>
-        <nav><a href="#skills">Skills</a></nav>
-        <nav><a href="#contact">Contact</a></nav>
-    </div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <div class="noise"></div>
+
+    <header class="navbar" id="navbar">
+        <a href="#about" class="logo">JA<span>.</span></a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#about" class="nav-link active">About</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
 
     <section class="hero" id="about">
-        <div class="hero-text">
-            <h1>Hello, I'm Jose Allan</h1>
-            <h2>Full-Stack Developer</h2>
-            <p>
-                I build modern, fast,<br>
-                and responsive web apps.
-            </p>
-
-            <div class="buttons">
-                <button onclick="location.href='#projects'">
-                    View Projects
-                </button>
-                <button onclick="window.open('resume.pdf')">
-                    Download Resume
-                </button>
-            </div>
+        <div class="hero-bg">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="grid-overlay"></div>
         </div>
 
-        <div class="avatar">
-            <img src="profile.jpg" alt="Avatar">
+        <div class="hero-inner">
+            <div class="hero-text">
+                <p class="hero-greet reveal">👋 Hello, I'm</p>
+                <h1 class="hero-name reveal">Jose Allan</h1>
+                <h2 class="hero-role reveal">
+                    <span class="typed" id="typed"></span><span class="typed-cursor">|</span>
+                </h2>
+                <p class="hero-desc reveal">
+                    I build modern, fast, and responsive web applications with clean code
+                    and thoughtful design — from the database all the way to the pixels.
+                </p>
+
+                <div class="buttons reveal">
+                    <a href="#projects" class="btn btn-primary">
+                        View Projects
+                        <span class="btn-arrow">→</span>
+                    </a>
+                    <a href="resume.pdf" target="_blank" rel="noopener" class="btn btn-outline">
+                        Download Resume
+                    </a>
+                </div>
+
+                <div class="socials reveal">
+                    <a href="https://github.com/japd123" target="_blank" rel="noopener" aria-label="GitHub" class="social">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.73.5.98 5.25.98 11.52c0 4.86 3.15 8.98 7.53 10.44.55.1.75-.24.75-.53v-1.85c-3.06.67-3.71-1.47-3.71-1.47-.5-1.28-1.23-1.62-1.23-1.62-1-.69.08-.67.08-.67 1.11.08 1.7 1.14 1.7 1.14.99 1.7 2.59 1.21 3.22.93.1-.72.39-1.21.7-1.49-2.44-.28-5.01-1.22-5.01-5.44 0-1.2.43-2.18 1.14-2.95-.12-.28-.5-1.41.1-2.94 0 0 .93-.3 3.05 1.13a10.6 10.6 0 0 1 5.56 0c2.12-1.43 3.05-1.13 3.05-1.13.6 1.53.22 2.66.11 2.94.71.77 1.14 1.75 1.14 2.95 0 4.23-2.58 5.16-5.03 5.43.4.34.75 1.01.75 2.04v3.03c0 .29.2.64.76.53A11.03 11.03 0 0 0 23 11.52C23 5.25 18.27.5 12 .5z"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61578721007616" target="_blank" rel="noopener" aria-label="Facebook" class="social">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.9 3.78-3.9 1.1 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.87h2.78l-.44 2.9h-2.34V22c4.78-.76 8.43-4.92 8.43-9.94z"/></svg>
+                    </a>
+                    <a href="mailto:joseallan@email.com" aria-label="Email" class="social">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="avatar reveal">
+                <div class="avatar-glow"></div>
+                <div class="avatar-frame">
+                    <img src="avatar.jpg" alt="" onerror="this.style.display='none'">
+                </div>
+                <div class="badge badge-1">&lt;/&gt; Code</div>
+                <div class="badge badge-2">🚀 Deploy</div>
+            </div>
         </div>
     </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
+    <section id="projects" class="section">
+        <div class="section-head reveal">
+            <span class="section-tag">Portfolio</span>
+            <h2>Featured <span>Projects</span></h2>
+            <p>A selection of work I've built — from concept to deployment.</p>
+        </div>
+
         <div class="project-container">
-            <div class="project-card">
-                <h3>Portfolio Website</h3>
-                <p>
-                    A personal portfolio website
-                    created with HTML and CSS.
-                </p>
-            </div>
+            <article class="project-card reveal">
+                <div class="project-thumb">
+                    <div class="thumb-icon">🎨</div>
+                </div>
+                <div class="project-body">
+                    <h3>Portfolio Website</h3>
+                    <p>A personal portfolio website crafted with HTML, CSS, and JavaScript — focused on performance and clean motion design.</p>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <a href="#" class="project-link">View Project <span>→</span></a>
+                </div>
+            </article>
 
-            <div class="project-card">
-                <h3>E-Commerce Website</h3>
-                <p>
-                    A modern online store design
-                    with responsive layout.
-                </p>
-            </div>
+            <article class="project-card reveal">
+                <div class="project-thumb">
+                    <div class="thumb-icon">🛒</div>
+                </div>
+                <div class="project-body">
+                    <h3>E-Commerce Website</h3>
+                    <p>A modern online store design with a fully responsive layout, cart interactions, and product filtering.</p>
+                    <div class="project-tags">
+                        <span>Laravel</span>
+                        <span>MySQL</span>
+                        <span>Blade</span>
+                    </div>
+                    <a href="#" class="project-link">View Project <span>→</span></a>
+                </div>
+            </article>
 
-            <div class="project-card">
-                <h3>Web Application</h3>
-                <p>
-                    Full-stack application
-                    with database integration.
-                </p>
+            <article class="project-card reveal">
+                <div class="project-thumb">
+                    <div class="thumb-icon">⚙️</div>
+                </div>
+                <div class="project-body">
+                    <h3>Web Application</h3>
+                    <p>A full-stack application with authentication, database integration, and a modular MVC architecture.</p>
+                    <div class="project-tags">
+                        <span>PHP</span>
+                        <span>Laravel</span>
+                        <span>MySQL</span>
+                    </div>
+                    <a href="#" class="project-link">View Project <span>→</span></a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="section-head reveal">
+            <span class="section-tag">Toolbox</span>
+            <h2>Skills &amp; <span>Technologies</span></h2>
+            <p>The tools I reach for when building modern web applications.</p>
+        </div>
+
+        <div class="skills reveal">
+            <div class="skill-chip">
+                <span class="skill-dot" style="--c:#e34f26"></span>
+                <span class="skill-name">HTML</span>
+                <span class="skill-bar"><i style="--w:95%"></i></span>
+            </div>
+            <div class="skill-chip">
+                <span class="skill-dot" style="--c:#2965f1"></span>
+                <span class="skill-name">CSS</span>
+                <span class="skill-bar"><i style="--w:90%"></i></span>
+            </div>
+            <div class="skill-chip">
+                <span class="skill-dot" style="--c:#f7df1e"></span>
+                <span class="skill-name">JavaScript</span>
+                <span class="skill-bar"><i style="--w:85%"></i></span>
+            </div>
+            <div class="skill-chip">
+                <span class="skill-dot" style="--c:#8892bf"></span>
+                <span class="skill-name">PHP</span>
+                <span class="skill-bar"><i style="--w:88%"></i></span>
+            </div>
+            <div class="skill-chip">
+                <span class="skill-dot" style="--c:#ff2d20"></span>
+                <span class="skill-name">Laravel</span>
+                <span class="skill-bar"><i style="--w:82%"></i></span>
+            </div>
+            <div class="skill-chip">
+                <span class="skill-dot" style="--c:#00758f"></span>
+                <span class="skill-name">MySQL</span>
+                <span class="skill-bar"><i style="--w:80%"></i></span>
             </div>
         </div>
     </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
+    <section id="contact" class="section contact-section">
+        <div class="contact-card reveal">
+            <span class="section-tag">Get in touch</span>
+            <h2>Let's build <span>something</span> great.</h2>
+            <p>Have a project in mind or just want to say hi? My inbox is always open.</p>
 
-        <div class="skills">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>PHP</span>
-            <span>MySQL</span>
+            <div class="contact-list">
+                <a href="mailto:joseallan@email.com" class="contact-item">
+                    <span class="ci-icon">✉️</span>
+                    <span class="ci-text">
+                        <small>Email</small>
+                        joseallan@email.com
+                    </span>
+                </a>
+                <a href="https://github.com/japd123" target="_blank" rel="noopener" class="contact-item">
+                    <span class="ci-icon">💻</span>
+                    <span class="ci-text">
+                        <small>GitHub</small>
+                        github.com/japd123
+                    </span>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61578721007616" target="_blank" rel="noopener" class="contact-item">
+                    <span class="ci-icon">📘</span>
+                    <span class="ci-text">
+                        <small>Facebook</small>
+                        Jose Allan Dumlao
+                    </span>
+                </a>
+            </div>
+
+            <a href="mailto:joseallan@email.com" class="btn btn-primary btn-wide">
+                Say Hello <span class="btn-arrow">→</span>
+            </a>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p> Email: 
-            <a href="mailto:joseallan@email.com">joseallan@email.com</a>
-        </p>
-        <p>GitHub: <a href="https://github.com/japd123" target="_blank">github.com/japd123</a></p>
-        <p>Facebook: <a href="https://www.facebook.com/profile.php?id=61578721007616" target="_blank">Jose Allan Dumlao</a></p>
-    </section>
+    <footer class="footer">
+        <p>© <span id="year"></span> Jose Allan Dumlao. Built with care.</p>
+    </footer>
 
+    <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
 
-
+    <script src="script.js"></script>
 </body>
 </html>
